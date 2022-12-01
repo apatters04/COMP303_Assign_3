@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <cctype>
+#include <algorithm>
 #include "Assign3_Functions.h"
 
 using namespace std;
@@ -27,8 +27,9 @@ int main()
 
             string_copy = user_string;
 
-
-            user_string.erase(remove(user_string.begin(), user_string.end(), ' '), user_string.end()); //stripping a string of spaces, making all lower case
+            transform(user_string.begin(), user_string.end(), user_string.begin(),[](unsigned char c) { return tolower(c); });  //stripping a string of spaces, making all lower case
+            user_string.erase(remove(user_string.begin(), user_string.end(), ' '), user_string.end());
+            
 
             if (isPalindrome(user_string, 0, user_string.length())) {
                 cout << string_copy << " is a palindrome!" << endl;

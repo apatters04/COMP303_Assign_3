@@ -1,3 +1,3 @@
 ﻿  Assignment_3.cpp
-C:\Users\andip\source\repos\apatters04\COMP303_Assign_3\Assignment_3\Assignment_3\Assignment_3.cpp(31,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\andip\source\repos\apatters04\COMP303_Assign_3\Assignment_3\Assignment_3\Assignment_3.cpp(34,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Assignment_3.vcxproj -> C:\Users\andip\source\repos\apatters04\COMP303_Assign_3\Assignment_3\x64\Debug\Assignment_3.exe
