@@ -1,17 +1,17 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <iterator>
+#include <map>
 #include "Assign3_Functions.h"
 
 using namespace std;
 
 int main()
 {
-    char user_input = ' ';
+    char user_input = ' '; //menu choice
     
-
-
-    while (user_input != 'Q') {
+    while (user_input != 'Q') { //user functionality for all assignment requirements
         user_input = toupper(menu_options());
         cout << endl;
 
