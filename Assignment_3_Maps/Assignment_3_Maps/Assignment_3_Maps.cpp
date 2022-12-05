@@ -1,20 +1,55 @@
-// Assignment_3_Maps.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
+#include <string>
+#include <algorithm>
+#include <iterator>
+#include <map>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+int main() {
+
+	map<string, string> stateDataMap;
+	string user_state;
+
+	stateDataMap.insert(pair<string, string>("Nebraska", "Lincoln")); //Add given pairs to stateDataMap
+	stateDataMap.insert(pair<string, string>("New York", "Albany"));
+	stateDataMap.insert(pair<string, string>("Ohio", "Columbus"));
+	stateDataMap.insert(pair<string, string>("California", "Sacramento"));
+	stateDataMap.insert(pair<string, string>("Massachussetts", "Boston"));
+	stateDataMap.insert(pair<string, string>("Texas", "Austin"));
+
+	cout << "The map stateDataMap contains:" << endl;
+
+	map<string, string>::iterator i;
+	for (i = stateDataMap.begin(); i != stateDataMap.end(); ++i) { //output data stored in stateDataMap
+		cout << i->first << ", " << i->second << endl;
+	}
+	cout << endl;
+
+	stateDataMap["California"] = "Los Angeles"; //change capital of California to Los Angeles
+
+	while (user_state != "quit") { //output capitalName using stateName which will be entered by user
+
+		cout << "Enter state name or 'quit' to exit: " << endl;
+		getline(cin, user_state);
+
+		if (user_state == "quit") { //exit program
+			break;
+		}
+
+		else {			
+			
+			auto it = stateDataMap.find(user_state); //finding stateKey to output capitalValue
+
+			if (it == stateDataMap.end()) {
+				cout << user_state << " not found - please enter a new state or check capitalization." << endl;
+			}
+			else {
+				cout << "The Capital of " << it->first << " is " << it->second << "!!" << endl;
+			}
+			cout << endl;
+		}
+	}
+	
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
