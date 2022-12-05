@@ -29,6 +29,7 @@ int main() {
 
 	stateDataMap["California"] = "Los Angeles"; //change capital of California to Los Angeles
 	cout << "Changed capital of California." << endl;
+	cout << endl;
 
 	while (user_state != "quit") { //output capitalName using stateName which will be entered by user
 
